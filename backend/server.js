@@ -15,7 +15,7 @@ app.use(cors(corsOptions));
 
 // Define a route handler for the default home page
 app.get('/', (req, res) => {
-  res.send( process.env.CHATGPT_KEY);
+  res.send("server is running");
 });
 
 app.post("/completions",async (req,res)=>{
