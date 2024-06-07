@@ -37,7 +37,7 @@ const extractAddress = (place) => {
       return city + state + this.country;
     }
   }
-  console.log(place?.geometry)
+  // console.log(place?.geometry)
   if (!Array.isArray(place?.address_components)) {
     return address;
   }
@@ -78,7 +78,7 @@ const InputPage = () => {
     longitude: null,   // Added longitude
     country:""
   })   
-  console.log(input)
+  // console.log(input)
   const dispatch = useDispatch()
   const searchInput = useRef(null);
   const navigate = useNavigate();
@@ -100,10 +100,10 @@ const InputPage = () => {
   const onChangeAddress = (autocomplete) => {
     const place = autocomplete.getPlace();   
     // const geometry=autocomplete.getGeometry();
-    console.log(place) 
-    // console.log(geometry)
+    // console.log(place) 
+    // // console.log(geometry)
     const extractedAddress=extractAddress(place)  
-    console.log(extractedAddress)   
+    // console.log(extractedAddress)   
     setInput((inputData)=>({
       ...inputData,
       city:extractedAddress.city,
@@ -165,13 +165,13 @@ const InputPage = () => {
   };
   // load map script after mounted
   useEffect(() => {
-    initMapScript().then(() => initAutocomplete()).catch((error) => console.error(error));
+    initMapScript().then(() => initAutocomplete()).catch((error) => {});
   }, []);
 
   // const handleDisable = () =>{
   //   return !(input.city != "" && input.nod != 0 && input.groupType != "")
   // }
-  // console.log(!(input.city != "" && input.nod != 0 && input.groupType != ""))
+  // // console.log(!(input.city != "" && input.nod != 0 && input.groupType != ""))
 
   return (
     <div className={`px-10 sm:px-4 mt-5 ${isDarkMode ? 'dark' : ''}`}>
