@@ -235,6 +235,9 @@ const Itinerary = () => {
     // console.log("Cureency Value UE")
   },[currency])
 
+
+  console.log(currency)
+  console.log(currencyVal);
   const fetchImage = useCallback(async (location) => {
     try {
       const response = await fetch(
