@@ -181,7 +181,7 @@ const Itinerary = () => {
         throw new Error('Failed to fetch country data');
       }
       const data = await response.json();
-      console.log(data)
+      // console.log(data)
       const country = data.find(c => c.name.common.toLowerCase() === countryName.toLowerCase());
       if (country && country.currencies) {
         const currencyCode = Object.keys(country.currencies)[0];
@@ -206,7 +206,7 @@ const Itinerary = () => {
         throw new Error('Failed to fetch currency value');
       }       
       const data = await response.json();
-      console.log(data)
+      // console.log(data)
       const array= data.conversion_rates;
       const value=Math.round(array[currency]*100)/100;
       setCurrencyVal(value)        
@@ -238,8 +238,8 @@ const Itinerary = () => {
   },[currency])
 
 
-  console.log(currency)
-  console.log(currencyVal);
+  // console.log(currency)
+  // console.log(currencyVal);
   const fetchImage = useCallback(async (location) => {
     try {
       const response = await fetch(
