@@ -81,7 +81,7 @@ const Itinerary = () => {
         }
       }
       try {
-        const response= await fetch("http://localhost:8000/completions",options)
+        const response= await fetch("https://trip-iq-server.vercel.app/completions",options)
         const data=await response.json()
         setData(JSON.parse(data.choices[0].message.content))
         // console.log(data);
@@ -238,7 +238,7 @@ const Itinerary = () => {
   const fetchImage = useCallback(async (location) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/google-maps?location=${location}`
+        `https://trip-iq-server.vercel.app/api/google-maps?location=${location}`
       );
       if (!response.ok) {
         throw new Error('Failed to fetch image');
