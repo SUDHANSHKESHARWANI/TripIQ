@@ -425,10 +425,10 @@ const Itinerary = () => {
               <h3 className="font-semibold pt-1 ml-1">General Information</h3>
             </div>
             <div className="flex flex-wrap dark:text-slate-300">
-              <div className="flex flex-nowrap"><FontAwesomeIcon icon={faMoneyBill1Wave} className="my-5 ml-3  text-green-700"/>
-              <p className="m-4">{currency}</p></div>
-              <div className="flex flex-nowrap"><FontAwesomeIcon icon={faMoneyBillTransfer} className="my-5 ml-3 md:ml-8 text-green-700"/>
-              <p className="m-4">1 USD = {currencyVal} {currency} </p>  </div> 
+              {currency && <div className="flex flex-nowrap"><FontAwesomeIcon icon={faMoneyBill1Wave} className="my-5 ml-3  text-green-700"/>
+              <p className="m-4">{currency}</p></div>}
+              {currencyVal && <div className="flex flex-nowrap"><FontAwesomeIcon icon={faMoneyBillTransfer} className="my-5 ml-3 md:ml-8 text-green-700"/>
+              <p className="m-4">1 USD = {currencyVal} {currency} </p>  </div> }
               <div className="flex flex-nowrap"><FontAwesomeIcon icon={faTemperatureHalf} className="my-5 ml-3 md:ml-8"/>       
               <p className="m-4"><strong>Temp:</strong> {weather.temp} &deg; C</p>
               <img src={weather.icon} alt="icon" className="mb-4"/>
