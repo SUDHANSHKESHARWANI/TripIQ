@@ -7,7 +7,7 @@ require('dotenv').config();
 const app=express()
 app.use(express.json())
 const corsOptions = {
-    origin: "https://tripiq.vercel.app/", // Allow requests from this origin
+    origin: "https://tripiq.vercel.app", // Allow requests from this origin
     // origin: "*",
   };
   
@@ -25,7 +25,7 @@ app.post("/completions",async (req,res)=>{
         headers:{
             "Authorization":`Bearer ${process.env.CHATGPT_KEY}`,
             "Content-Type":"application/json",
-            "Origin":"http://localhost:3000"
+            "Origin":"https://tripiq.vercel.app"
         },
         
         body:JSON.stringify({
